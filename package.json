@@ -1,14 +1,14 @@
 {
   "name": "ngx-bootstrap-base",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Native Angular Bootstrap Components",
   "private": true,
   "scripts": {
     "lite-server": "lite-server -c demo/bs-config.js",
     "typedoc": "typedoc --exclude '**/*.spec.ts' ./src/",
     "demo.docs": "node scripts/docs/get-doc.js",
-    "demo.serve": "run-s build link demo.build lite-server",
-    "demo.gh-pages": "run-s build demo.build demo.deploy",
+    "demo.serve": "run-s build link demo.docs demo.build lite-server",
+    "demo.gh-pages": "run-s build demo.docs demo.build demo.deploy",
     "demo.build": "ng build -prod --aot && npm run generate-bs4",
     "demo.deploy": "gh-pages -d demo/dist",
     "demo-beta-deploy": "gh-pages -d demo/dist -r git@github.com:valorkin/ngx-bootstrap.git -b gh-pages",
