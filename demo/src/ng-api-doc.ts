@@ -903,11 +903,44 @@ export const ngdoc: any = {
       }
     ]
   },
+  "BsModalService": {
+    "fileName": "src/modal/bs-modal.service.ts",
+    "className": "BsModalService",
+    "description": "",
+    "methods": [
+      {
+        "name": "show",
+        "description": "<p>Shows a modal </p>\n",
+        "args": [
+          {
+            "name": "content",
+            "type": "any"
+          },
+          {
+            "name": "config",
+            "type": "any"
+          }
+        ],
+        "returnType": "BsModalRef"
+      }
+    ],
+    "properties": []
+  },
   "ModalBackdropComponent": {
     "fileName": "src/modal/modal-backdrop.component.ts",
     "className": "ModalBackdropComponent",
     "description": "<p>This component will be added as background layout for modals if enabled </p>\n",
     "selector": "bs-modal-backdrop",
+    "inputs": [],
+    "outputs": [],
+    "properties": [],
+    "methods": []
+  },
+  "ModalContainerComponent": {
+    "fileName": "src/modal/modal-container.component.ts",
+    "className": "ModalContainerComponent",
+    "description": "",
+    "selector": "modal-container",
     "inputs": [],
     "outputs": [],
     "properties": [],
@@ -920,9 +953,19 @@ export const ngdoc: any = {
     "methods": [],
     "properties": [
       {
+        "name": "animated",
+        "type": "boolean",
+        "description": "<p>Toggle animation</p>\n"
+      },
+      {
         "name": "backdrop",
         "type": "boolean | \"static\"",
         "description": "<p>Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn&#39;t close the modal on click.</p>\n"
+      },
+      {
+        "name": "class",
+        "type": "string",
+        "description": "<p>Css class for opened modal</p>\n"
       },
       {
         "name": "ignoreBackdropClick",
@@ -938,6 +981,26 @@ export const ngdoc: any = {
         "name": "show",
         "type": "boolean",
         "description": "<p>Shows the modal when initialized.</p>\n"
+      }
+    ]
+  },
+  "BsModalRef": {
+    "fileName": "src/modal/modal-options.class.ts",
+    "className": "BsModalRef",
+    "description": "",
+    "methods": [
+      {
+        "name": "hide",
+        "description": "<p>Hides the modal</p>\n",
+        "args": [],
+        "returnType": "void"
+      }
+    ],
+    "properties": [
+      {
+        "name": "content",
+        "type": "Object",
+        "description": "<p>Reference to a component inside the modal. Null if modal&#39;s been created with TemplateRef</p>\n"
       }
     ]
   },
@@ -1006,6 +1069,12 @@ export const ngdoc: any = {
             "type": "Event"
           }
         ],
+        "returnType": "void"
+      },
+      {
+        "name": "focusOtherModal",
+        "description": "<p>Events tricks </p>\n",
+        "args": [],
         "returnType": "void"
       }
     ]
@@ -1253,6 +1322,11 @@ export const ngdoc: any = {
         "description": "<p>A selector specifying the element the popover should be appended to.\nCurrently only supports &quot;body&quot;.</p>\n"
       },
       {
+        "name": "containerClass",
+        "type": "string",
+        "description": "<p>Css class for popover container</p>\n"
+      },
+      {
         "name": "isOpen",
         "type": "boolean",
         "description": "<p>Returns whether or not the popover is currently being shown</p>\n"
@@ -1432,8 +1506,8 @@ export const ngdoc: any = {
       },
       {
         "name": "value",
-        "type": "number",
-        "description": "<p>current value of progress bar </p>\n"
+        "type": "number | any[]",
+        "description": "<p>current value of progress bar. Could be a number or array of objects like {&quot;value&quot;:15,&quot;type&quot;:&quot;info&quot;,&quot;label&quot;:&quot;15 %&quot;} </p>\n"
       }
     ],
     "outputs": [],
@@ -1896,6 +1970,11 @@ export const ngdoc: any = {
         "name": "container",
         "type": "string",
         "description": "<p>A selector specifying the element the tooltip should be appended to.\nCurrently only supports &quot;body&quot;.</p>\n"
+      },
+      {
+        "name": "containerClass",
+        "type": "string",
+        "description": "<p>Css class for tooltip container</p>\n"
       },
       {
         "name": "isDisabled",
