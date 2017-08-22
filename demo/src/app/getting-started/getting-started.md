@@ -18,8 +18,6 @@
 
 ngx-bootstrap contains all core (and not only) Bootstrap components powered by Angular. So you don't need to include original JS components, but we are using markup and css provided by Bootstrap.
 
-Additionally to allow reach experience while working with Dates we are using [moment.js](http://momentjs.com/), de facto base date manipulation library at the moment.
-
 # Installation instructions
 
 Install `ngx-bootstrap` from `npm`
@@ -37,7 +35,7 @@ You will need bootstrap styles (Bootstrap 3)
 Or Bootstrap 4
 ```
 <!--- index.html -->
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
 ```
 To enable bootstrap 4 theme templates in ngx-bootstrap, please read
 [here](https://github.com/valor-software/ngx-bootstrap/blob/development/docs/getting-started/bootstrap4.md)
