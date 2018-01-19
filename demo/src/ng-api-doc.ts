@@ -142,27 +142,6 @@ export const ngdoc: any = {
       }
     ]
   },
-  "LocaleOptionsFormat": {
-    "fileName": "src/chronos/locale/locale.class.ts",
-    "className": "LocaleOptionsFormat",
-    "description": "",
-    "methods": [],
-    "properties": []
-  },
-  "LocaleData": {
-    "fileName": "src/chronos/locale/locale.class.ts",
-    "className": "LocaleData",
-    "description": "",
-    "methods": [],
-    "properties": []
-  },
-  "TimeUnit": {
-    "fileName": "src/chronos/types.ts",
-    "className": "TimeUnit",
-    "description": "",
-    "methods": [],
-    "properties": []
-  },
   "ButtonCheckboxDirective": {
     "fileName": "src/buttons/button-checkbox.directive.ts",
     "className": "ButtonCheckboxDirective",
@@ -186,6 +165,16 @@ export const ngdoc: any = {
     "properties": [],
     "methods": []
   },
+  "ButtonRadioGroupDirective": {
+    "fileName": "src/buttons/button-radio-group.directive.ts",
+    "className": "ButtonRadioGroupDirective",
+    "description": "<p>A group of radio buttons.\nA value of a selected button is bound to a variable specified via ngModel.</p>\n",
+    "selector": "[btnRadioGroup]",
+    "inputs": [],
+    "outputs": [],
+    "properties": [],
+    "methods": []
+  },
   "ButtonRadioDirective": {
     "fileName": "src/buttons/button-radio.directive.ts",
     "className": "ButtonRadioDirective",
@@ -196,6 +185,11 @@ export const ngdoc: any = {
         "name": "btnRadio",
         "type": "any",
         "description": "<p>Radio button value, will be set to <code>ngModel</code> </p>\n"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "<p>If <code>true</code> — radio button is disabled </p>\n"
       },
       {
         "name": "uncheckable",
@@ -237,6 +231,11 @@ export const ngdoc: any = {
         "name": "noWrap",
         "type": "boolean",
         "description": "<p>If <code>true</code> — carousel will not cycle continuously and will have hard stops (prevent looping) </p>\n"
+      },
+      {
+        "name": "showIndicators",
+        "type": "boolean",
+        "description": "<p>If <code>true</code> — carousel-indicators are visible  </p>\n"
       }
     ],
     "outputs": [
@@ -400,6 +399,12 @@ export const ngdoc: any = {
         "defaultValue": "false",
         "type": "boolean",
         "description": "<p>Is slides can wrap from the last to the first slide </p>\n"
+      },
+      {
+        "name": "showIndicators",
+        "defaultValue": "true",
+        "type": "boolean",
+        "description": "<p>Show carousel-indicators </p>\n"
       }
     ]
   },
@@ -430,6 +435,164 @@ export const ngdoc: any = {
       }
     ],
     "methods": []
+  },
+  "DateParsingConfig": {
+    "fileName": "src/chronos/create/parsing.types.ts",
+    "className": "DateParsingConfig",
+    "description": "",
+    "methods": [],
+    "properties": [
+      {
+        "name": "_a",
+        "type": "number[]",
+        "description": "<p>DateArray [year, month, date, .....] </p>\n"
+      },
+      {
+        "name": "_changeInProgress",
+        "type": "boolean",
+        "description": "<p>used in set offset </p>\n"
+      },
+      {
+        "name": "_d",
+        "type": "Date",
+        "description": "<p>date value </p>\n"
+      },
+      {
+        "name": "_f",
+        "type": "string | string[]",
+        "description": "<p>date format </p>\n"
+      },
+      {
+        "name": "_i",
+        "type": "DateInput",
+        "description": "<p>input to parse: could be string, number[], number, Date, object </p>\n"
+      },
+      {
+        "name": "_isPm",
+        "type": "boolean",
+        "description": "<p>is PM </p>\n"
+      },
+      {
+        "name": "_isValid",
+        "type": "boolean",
+        "description": "<p>is valid </p>\n"
+      },
+      {
+        "name": "_l",
+        "type": "string",
+        "description": "<p>locale key, &#39;en&#39; by default </p>\n"
+      },
+      {
+        "name": "_locale",
+        "type": "Locale",
+        "description": "<p>date locale obj </p>\n"
+      },
+      {
+        "name": "_meridiem",
+        "type": "string",
+        "description": "<p>date meridiem </p>\n"
+      },
+      {
+        "name": "_nextDay",
+        "type": "boolean",
+        "description": "<p>add one day to result at the end of parsing </p>\n"
+      },
+      {
+        "name": "_offset",
+        "type": "number",
+        "description": "<p>utc time offset </p>\n"
+      },
+      {
+        "name": "_pf",
+        "type": "DateParsingFlags",
+        "description": "<p>date parsing flags </p>\n"
+      },
+      {
+        "name": "_strict",
+        "type": "boolean",
+        "description": "<p>use strict parse format </p>\n"
+      },
+      {
+        "name": "_tzm",
+        "type": "number",
+        "description": "<p>time zone </p>\n"
+      },
+      {
+        "name": "_w",
+        "type": "WeekParsing",
+        "description": "<p>date specific info \nweek </p>\n"
+      }
+    ]
+  },
+  "DateParsingFlags": {
+    "fileName": "src/chronos/create/parsing.types.ts",
+    "className": "DateParsingFlags",
+    "description": "",
+    "methods": [],
+    "properties": []
+  },
+  "LocaleOptionsFormat": {
+    "fileName": "src/chronos/locale/locale.class.ts",
+    "className": "LocaleOptionsFormat",
+    "description": "",
+    "methods": [],
+    "properties": []
+  },
+  "LocaleData": {
+    "fileName": "src/chronos/locale/locale.class.ts",
+    "className": "LocaleData",
+    "description": "",
+    "methods": [],
+    "properties": []
+  },
+  "CalendarSpec": {
+    "fileName": "src/chronos/moment/calendar.ts",
+    "className": "CalendarSpec",
+    "description": "",
+    "methods": [],
+    "properties": []
+  },
+  "MomentFn": {
+    "fileName": "src/chronos/test/chain.ts",
+    "className": "MomentFn",
+    "description": "",
+    "methods": [],
+    "properties": []
+  },
+  "MomentInputObject": {
+    "fileName": "src/chronos/test/chain.ts",
+    "className": "MomentInputObject",
+    "description": "",
+    "methods": [],
+    "properties": []
+  },
+  "TimeUnit": {
+    "fileName": "src/chronos/types.ts",
+    "className": "TimeUnit",
+    "description": "",
+    "methods": [],
+    "properties": []
+  },
+  "DateFormatterOptions": {
+    "fileName": "src/chronos/types.ts",
+    "className": "DateFormatterOptions",
+    "description": "",
+    "methods": [],
+    "properties": []
+  },
+  "DateObject": {
+    "fileName": "src/chronos/types.ts",
+    "className": "DateObject",
+    "description": "",
+    "methods": [],
+    "properties": []
+  },
+  "WeekParsing": {
+    "fileName": "src/chronos/types.ts",
+    "className": "WeekParsing",
+    "description": "",
+    "methods": [],
+    "properties": []
   },
   "CollapseDirective": {
     "fileName": "src/collapse/collapse.directive.ts",
@@ -623,12 +786,6 @@ export const ngdoc: any = {
         "description": "<p>CSS class which will be applied to datepicker container,\nusually used to set color theme</p>\n"
       },
       {
-        "name": "locale",
-        "defaultValue": "en",
-        "type": "string",
-        "description": "<p>Allows to globally set default locale of datepicker,\nsee documentation on how to enable custom locales</p>\n"
-      },
-      {
         "name": "maxDate",
         "type": "Date",
         "description": "<p>Default max date for all date/range pickers</p>\n"
@@ -760,6 +917,13 @@ export const ngdoc: any = {
       }
     ]
   },
+  "BsLocaleService": {
+    "fileName": "src/datepicker/bs-locale.service.ts",
+    "className": "BsLocaleService",
+    "description": "",
+    "methods": [],
+    "properties": []
+  },
   "DatePickerInnerComponent": {
     "fileName": "src/datepicker/datepicker-inner.component.ts",
     "className": "DatePickerInnerComponent",
@@ -784,6 +948,11 @@ export const ngdoc: any = {
       {
         "name": "datepickerMode",
         "type": "string",
+        "description": ""
+      },
+      {
+        "name": "dayDisabled",
+        "type": "number[]",
         "description": ""
       },
       {
@@ -925,6 +1094,11 @@ export const ngdoc: any = {
         "defaultValue": "day",
         "type": "string",
         "description": "<p>sets datepicker mode, supports: <code>day</code>, <code>month</code>, <code>year</code> </p>\n"
+      },
+      {
+        "name": "dayDisabled",
+        "type": "number[]",
+        "description": "<p>disabled days of the week from 0-6 (0=Sunday, ..., 6=Saturday) </p>\n"
       },
       {
         "name": "formatDay",
@@ -1680,7 +1854,7 @@ export const ngdoc: any = {
           },
           {
             "name": "config",
-            "type": "any"
+            "type": "ModalOptions"
           }
         ],
         "returnType": "BsModalRef"
@@ -1739,6 +1913,11 @@ export const ngdoc: any = {
         "name": "ignoreBackdropClick",
         "type": "boolean",
         "description": "<p>Ignore the backdrop click</p>\n"
+      },
+      {
+        "name": "initialState",
+        "type": "Object",
+        "description": "<p>Modal data</p>\n"
       },
       {
         "name": "keyboard",
@@ -2620,12 +2799,17 @@ export const ngdoc: any = {
       {
         "name": "showMeridian",
         "type": "boolean",
-        "description": ""
+        "description": "<p>if true meridian button will be shown </p>\n"
+      },
+      {
+        "name": "showMinutes",
+        "type": "boolean",
+        "description": "<p>show minutes in timepicker </p>\n"
       },
       {
         "name": "showSeconds",
         "type": "boolean",
-        "description": ""
+        "description": "<p>show seconds in timepicker </p>\n"
       },
       {
         "name": "showSpinners",
@@ -2704,6 +2888,12 @@ export const ngdoc: any = {
         "defaultValue": "true",
         "type": "boolean",
         "description": "<p>if true works in 12H mode and displays AM/PM. If false works in 24H mode and hides AM/PM </p>\n"
+      },
+      {
+        "name": "showMinutes",
+        "defaultValue": "true",
+        "type": "boolean",
+        "description": "<p>show minutes in timepicker </p>\n"
       },
       {
         "name": "showSeconds",
@@ -2800,6 +2990,11 @@ export const ngdoc: any = {
         "description": "<p>Css class for tooltip container</p>\n"
       },
       {
+        "name": "delay",
+        "type": "number",
+        "description": "<p>Delay before showing the tooltip</p>\n"
+      },
+      {
         "name": "isDisabled",
         "type": "boolean",
         "description": "<p>Allows to disable tooltip</p>\n"
@@ -2868,7 +3063,6 @@ export const ngdoc: any = {
       },
       {
         "name": "tooltipPopupDelay",
-        "defaultValue": "0",
         "type": "number",
         "description": ""
       },
