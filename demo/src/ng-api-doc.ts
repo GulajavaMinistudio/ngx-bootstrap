@@ -776,7 +776,7 @@ export const ngdoc: any = {
   "BsDatepickerConfig": {
     "fileName": "src/datepicker/bs-datepicker.config.ts",
     "className": "BsDatepickerConfig",
-    "description": "",
+    "description": "<p>For date range picker there are <code>BsDaterangepickerConfig</code> which inherits all properties,\nexcept displayMonths, for range picker it default to <code>2</code></p>\n",
     "methods": [],
     "properties": [
       {
@@ -822,7 +822,7 @@ export const ngdoc: any = {
     "inputs": [
       {
         "name": "bsConfig",
-        "type": "Partial<BsDatepickerConfig>",
+        "type": "Partial<BsDaterangepickerConfig>",
         "description": "<p>Config object for daterangepicker</p>\n"
       },
       {
@@ -916,6 +916,13 @@ export const ngdoc: any = {
         "returnType": "void"
       }
     ]
+  },
+  "BsDaterangepickerConfig": {
+    "fileName": "src/datepicker/bs-daterangepicker.config.ts",
+    "className": "BsDaterangepickerConfig",
+    "description": "",
+    "methods": [],
+    "properties": []
   },
   "BsLocaleService": {
     "fileName": "src/datepicker/bs-locale.service.ts",
@@ -2405,27 +2412,6 @@ export const ngdoc: any = {
     "properties": [],
     "methods": []
   },
-  "ProgressDirective": {
-    "fileName": "src/progressbar/progress.directive.ts",
-    "className": "ProgressDirective",
-    "description": "",
-    "selector": "bs-progress, [progress]",
-    "inputs": [
-      {
-        "name": "animate",
-        "type": "boolean",
-        "description": "<p>if <code>true</code> changing value of progress bar will be animated (note: not supported by Bootstrap 4) </p>\n"
-      },
-      {
-        "name": "max",
-        "type": "number",
-        "description": "<p>maximum total value of progress element </p>\n"
-      }
-    ],
-    "outputs": [],
-    "properties": [],
-    "methods": []
-  },
   "ProgressbarComponent": {
     "fileName": "src/progressbar/progressbar.component.ts",
     "className": "ProgressbarComponent",
@@ -2435,12 +2421,17 @@ export const ngdoc: any = {
       {
         "name": "animate",
         "type": "boolean",
-        "description": "<p>if <code>true</code> changing value of progress bar will be animated (note: not supported by Bootstrap 4) </p>\n"
+        "description": "<p>if <code>true</code> changing value of progress bar will be animated</p>\n"
       },
       {
         "name": "max",
         "type": "number",
         "description": "<p>maximum total value of progress element </p>\n"
+      },
+      {
+        "name": "striped",
+        "type": "boolean",
+        "description": "<p>If <code>true</code>, striped classes are applied </p>\n"
       },
       {
         "name": "type",
@@ -2465,9 +2456,9 @@ export const ngdoc: any = {
     "properties": [
       {
         "name": "animate",
-        "defaultValue": "true",
+        "defaultValue": "false",
         "type": "Boolean",
-        "description": "<p>if <code>true</code> changing value of progress bar will be animated (note: not supported by Bootstrap 4) </p>\n"
+        "description": "<p>if <code>true</code> changing value of progress bar will be animated </p>\n"
       },
       {
         "name": "max",
