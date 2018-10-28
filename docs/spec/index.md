@@ -143,9 +143,42 @@
 
 ## Pagination
 
+[Pagination. Basic](pagination/pagination.examples.basic.use-case.md)
+
+[Pagination. Manual switching page](pagination/pagination.examples.manual-switching-page.use-case.md)
+
+[Pagination. Page changed event](pagination/pagination.examples.page-changed-event.use-case.md)
+
+[Pagination. Pages count changed event](pagination/pagination.examples.pages-count-changed-event.use-case.md)
+
+[Pagination. Boundary links](pagination/pagination.examples.boundary-links.use-case.md)
+
+[Pagination. Direction links](pagination/pagination.examples.direction-links.use-case.md)
+
+[Pagination. Custom links content](pagination/pagination.examples.custom-links-content.use-cases.md)
+
+[Pagination. Disabled](pagination/pagination.examples.disabled.use-case.md)
+
+[Pagination. Limits](pagination/pagination.examples.limits.use-case.md)
+
+[Pagination. Centering the active page link](pagination/pagination.examples.centering-active-page-link.md)
+
+[Pagination. Content switching](pagination/pagination.examples.content-switching.use-case.md)
+
+[Pagination. Pager](pagination/pagination.examples.pager.use-case.md)
+
 ## Popover
 
 ## Progressbar
+
+[Progressbar. Static](progressbar/progressbar.examples.static.use-case.md)
+
+[Progressbar. Dynamic](progressbar/progressbar.examples.dynamic.use-case.md)
+
+[Progressbar. Stacked](progressbar/progressbar.examples.stacked.use-case.md)
+
+[Progressbar. Configuring defaults](progressbar/progressbar.examples.config-default.use-case.md)
+
 
 ## Rating
 
@@ -158,3 +191,4 @@
 ## Tooltip
 
 ## Typeahead
+
