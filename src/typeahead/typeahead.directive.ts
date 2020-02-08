@@ -22,7 +22,7 @@ import { TypeaheadContainerComponent } from './typeahead-container.component';
 import { TypeaheadMatch } from './typeahead-match.class';
 import { TypeaheadConfig } from './typeahead.config';
 import { getValueFromObject, latinize, tokenize } from './typeahead-utils';
-import { debounceTime, filter, map, mergeMap, switchMap, toArray } from 'rxjs/operators';
+import { debounceTime, filter, mergeMap, switchMap, toArray } from 'rxjs/operators';
 
 @Directive({selector: '[typeahead]', exportAs: 'bs-typeahead'})
 export class TypeaheadDirective implements OnInit, OnDestroy {
@@ -137,6 +137,8 @@ export class TypeaheadDirective implements OnInit, OnDestroy {
   _container: TypeaheadContainerComponent;
   isActiveItemChanged = false;
   isTypeaheadOptionsListActive = false;
+  isFocused = false;
+  cancelRequestOnFocusLost = false;
 
   // tslint:disable-next-line:no-any
   protected keyUpEventEmitter: EventEmitter<any> = new EventEmitter();
@@ -168,6 +170,7 @@ export class TypeaheadDirective implements OnInit, OnDestroy {
     Object.assign(this,
       {
         typeaheadHideResultsOnBlur: config.hideResultsOnBlur,
+        typeaheadCancelRequestOnFocusLost: config.cancelRequestOnFocusLost,
         typeaheadSelectFirstItem: config.selectFirstItem,
         typeaheadIsFirstItemActive: config.isFirstItemActive,
         typeaheadMinLength: config.minLength,
@@ -269,6 +272,7 @@ export class TypeaheadDirective implements OnInit, OnDestroy {
   @HostListener('click')
   @HostListener('focus')
   onFocus(): void {
+    this.isFocused = true;
     if (this.typeaheadMinLength === 0) {
       this.typeaheadLoading.emit(true);
       this.keyUpEventEmitter.emit(this.element.nativeElement.value || '');
@@ -277,6 +281,7 @@ export class TypeaheadDirective implements OnInit, OnDestroy {
 
   @HostListener('blur')
   onBlur(): void {
+    this.isFocused = false;
     if (this._container && !this._container.isFocused) {
       this.typeaheadOnBlur.emit(this._container.active);
     }
@@ -389,18 +394,7 @@ export class TypeaheadDirective implements OnInit, OnDestroy {
       this.keyUpEventEmitter
         .pipe(
           debounceTime(this.typeaheadWaitMs),
-          switchMap((value: string) => {
-            return this.typeahead
-              .pipe(
-                // tslint:disable-next-line:no-any
-                map((typeahead: any[]) => {
-                  const normalizedQuery = this.normalizeQuery(value);
-
-                  return typeahead.filter((option: any) =>
-                    option && this.testMatch(this.normalizeOption(option), normalizedQuery));
-                })
-              );
-          })
+          switchMap(() => this.typeahead)
         )
         .subscribe((matches: TypeaheadMatch[]) => {
           this.finalizeAsyncCall(matches);
@@ -489,6 +483,10 @@ export class TypeaheadDirective implements OnInit, OnDestroy {
     if (!this.hasMatches()) {
       this.hide();
 
+      return;
+    }
+
+    if (!this.isFocused && this.cancelRequestOnFocusLost) {
       return;
     }
 
