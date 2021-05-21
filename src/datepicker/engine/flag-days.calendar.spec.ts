@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { flagDaysCalendar } from './flag-days-calendar';
 
 describe('flag-days-calendar:', () => {
@@ -17,7 +18,11 @@ describe('flag-days-calendar:', () => {
       weekNumbers: [],
       weekdays: [],
       monthTitle: '',
-      yearTitle: ''
+      yearTitle: '',
+      disableRightArrow: false,
+      disableLeftArrow: false,
+      hideRightArrow: false,
+      hideLeftArrow: false
     };
     const datesDisabled = [
       new Date('2019-02-07'),
@@ -35,12 +40,13 @@ describe('flag-days-calendar:', () => {
       selectedRange: [],
       displayMonths: 1,
       monthIndex: 1,
+      dateTooltipTexts: [{date: new Date('2019-03-08'), tooltipText: 'test'}],
       dateCustomClasses: []
     });
 
-    expect(result.weeks[0].days.find(day => day.label === '2019-02-07').isDisabled).toBe(true);
-    expect(result.weeks[0].days.find(day => day.label === '2019-02-08').isDisabled).toBe(false);
-    expect(result.weeks[0].days.find(day => day.label === '2019-02-09').isDisabled).toBe(true);
+    expect(result.weeks[0].days.find(day => day.label === '2019-02-07')!.isDisabled).toBe(true);
+    expect(result.weeks[0].days.find(day => day.label === '2019-02-08')!.isDisabled).toBe(false);
+    expect(result.weeks[0].days.find(day => day.label === '2019-02-09')!.isDisabled).toBe(true);
   });
 
   it('should flag days as disabled when they are not part of the datesEnabled', () => {
@@ -58,7 +64,11 @@ describe('flag-days-calendar:', () => {
       weekNumbers: [],
       weekdays: [],
       monthTitle: '',
-      yearTitle: ''
+      yearTitle: '',
+      disableRightArrow: false,
+      disableLeftArrow: false,
+      hideRightArrow: false,
+      hideLeftArrow: false
     };
     const datesEnabled = [
       new Date('2020-02-07'),
@@ -76,11 +86,12 @@ describe('flag-days-calendar:', () => {
       selectedRange: [],
       displayMonths: 1,
       monthIndex: 1,
+      dateTooltipTexts: [{date: new Date('2019-03-08'), tooltipText: 'test'}],
       dateCustomClasses: []
     });
 
-    expect(result.weeks[0].days.find(day => day.label === '2020-02-07').isDisabled).toBe(false);
-    expect(result.weeks[0].days.find(day => day.label === '2020-02-08').isDisabled).toBe(true);
-    expect(result.weeks[0].days.find(day => day.label === '2020-02-09').isDisabled).toBe(false);
+    expect(result.weeks[0].days.find(day => day.label === '2020-02-07')!.isDisabled).toBe(false);
+    expect(result.weeks[0].days.find(day => day.label === '2020-02-08')!.isDisabled).toBe(true);
+    expect(result.weeks[0].days.find(day => day.label === '2020-02-09')!.isDisabled).toBe(false);
   });
 });
